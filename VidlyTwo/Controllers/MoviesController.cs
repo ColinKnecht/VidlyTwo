@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VidlyTwo.Models
 
 namespace VidlyTwo.Controllers
 {
@@ -16,6 +17,11 @@ namespace VidlyTwo.Controllers
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
+        }
+        public ActionResult Random()
+        {
+            var movie = new Movie() { Name = "Shrek!" };
+            return View(movie);
         }
     }
 }
